@@ -11,7 +11,7 @@ function parseBetween(str, start, end) {
 
 async function getVideo(id) {
     try {
-        const response = await fetch("https://sound-scribe.vercel.app/songs/id/" + id);
+        const response = await fetch("https://melody-mix-music-player.vercel.app//songs/id/" + id);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -48,7 +48,7 @@ router.get('/trending', async (req, res) => {
 router.post("/getsuggestion", async (req, res) => {
     try {
         let userId = req.body.id;
-        const response = await fetch("https://sound-scribe.vercel.app/recentplayed/getrecents", {
+        const response = await fetch("https://melody-mix-music-player.vercel.app/recentplayed/getrecents", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -83,7 +83,7 @@ router.post("/getsuggestion", async (req, res) => {
 });
 async function getPlaylist(id) {
     try {
-        const response = await fetch("https://sound-scribe.vercel.app/songs/getplaylist/" + id);
+        const response = await fetch("https://melody-mix-music-player.vercel.app/songs/getplaylist/" + id);
         const data = await response.json();
         return data[0];
     } catch (error) {
